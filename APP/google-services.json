@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "24254214401",
+    "project_id": "maos-que-ajudam-sud",
+    "storage_bucket": "maos-que-ajudam-sud.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24254214401:android:2870893b76dedb6da36b00",
+        "android_client_info": {
+          "package_name": "host.expo.exponent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbDqP86LtLpLULwW70RqeTlOz6_7u9Gwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
