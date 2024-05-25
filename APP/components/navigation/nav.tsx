@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import LoginScreen from './index';
-import SignupScreen from './criar_conta';
+import LoginScreen from '../index';
+import SignupScreen from '../criar_conta';
 
 const Stack = createStackNavigator();
 
@@ -18,3 +18,4 @@ const App = () => {
 };
 
 export default App;
+
