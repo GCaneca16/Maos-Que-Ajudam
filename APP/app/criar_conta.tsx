@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'reac
 import { auth } from '../firebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
-const criar_conta = ({ navigation }) => {
+const criar_conta = ({navigation}) => {
   const [nomeCompleto, setNomeCompleto] = useState('');
   const [estaca, setEstaca] = useState('');
   const [alaRamo, setAlaRamo] = useState('');
@@ -30,7 +30,7 @@ const criar_conta = ({ navigation }) => {
       });
   };
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
