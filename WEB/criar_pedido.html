@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Pedidos</title>
+    <link rel="stylesheet" href="homes_style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+  
+                <h1>Criar Pedido</h1>
+            </div>
+            <div class="butoess">
+                <section><option id="createMeusButton">Meus</option></section>
+                <section><option id="createPedidos">Pedidos</option></section>
+            <script>
+                document.getElementById("createMeusButton").onclick = function () {
+                    window.location.href = "home_membro.html"; 
+                };
+            </script>
+                </div>
+            <div class="form-logo-container">
+                <div class="form">
+                    <input type="pedido" placeholder="Pedido" required>
+                    <input type="descricao" placeholder="Descrição"required>
+                    <input type="localizacao" placeholder="Localização">
+                    <input type="n_pessoas" placeholder="Nº de Pessoas">
+                    <button type="button">Enviar Pedido</button>
+                </div>
+                 
+                    <img src="img/image 1.png" alt="Logo">
+            </div>
+        </div>
+</body>
+</html>
