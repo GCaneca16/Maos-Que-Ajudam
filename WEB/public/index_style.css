@@ -4,7 +4,31 @@ body {
     margin: 0;
     padding: 0;
 }
+nav {
+    padding: 10px 0;
+}
 
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #b1a9a9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -28,7 +52,7 @@ body {
         font-weight: 600;
     }}
     span a {
-        color: #007bff;
+        color: #acacac;
         text-decoration: none;
     }
 .form-logo-container {
@@ -102,7 +126,13 @@ body {
     bottom: 20px;
 }
 
-
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #000000;
+    margin-top: 20px;
+    border-radius: 0 0 8px 8px;
+}
 /* Estilos responsivos */
 @media (max-width: 768px) {
     .content {
@@ -164,5 +194,33 @@ body {
 
     .logo {
         width: 80px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+        header h1 {
+            font-size: 2em;
+        }
+        section h2 {
+            font-size: 1.5em;
+        }
+        .container {
+            padding: 10px;
+        }
+    }
+    @media (max-width: 480px) {
+        header h1 {
+            font-size: 1.5em;
+        }
+        section h2 {
+            font-size: 1.2em;
+        }
+        ul {
+            padding-left: 20px;
+        }
     }
 }

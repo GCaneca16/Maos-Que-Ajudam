@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Bispo</title>
+    <title>Home Membro</title>
     <link rel="stylesheet" href="homes_style.css">
 </head>
 
@@ -12,9 +12,6 @@
 
     <h1>Pedidos</h1>
     <div class="butoes">
-        <section>
-            <option>Meus</option>
-        </section>
         <section>
             <option>Pedidos</option>
         </section>
@@ -28,15 +25,14 @@
         </script>
     </div>
     <div class="table-container">
-        <table>
+        <table id="table">
             <thead>
                 <tr>
                     <th>Pedido</th>
-                    <th>Membro</th>
                     <th>Descrição</th>
                     <th>Localização</th>
                     <th>Nº Pessoas</th>
-                    <th>Aceita</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,17 +45,41 @@
 
     <img src="img/image 1.png" alt="Logo">
     </div>
+<script>
+   function editpedido(docId){
+    sessionStorage.setItem("docId", docId);
 
+window.location.href = "editar_pedido.html";
+console.log(docId);
+}
+</script>
     <script type="module">
         import { RequestPedidos } from "./scripts/firebaseDatabase.js";
-
+     
         const rawUser = localStorage.getItem("user");
         if (!rawUser) window.location.href = "index.html";
 
         const user = JSON.parse(rawUser);
-
-        const pedidos = await RequestPedidos();
+console.log(user);
+        const pedidos = await RequestPedidos(user.uid);
+        pedidos.forEach((doc) => {
+          const data=doc.data();
+            const table = document.getElementById("table").getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();            
+            const cell1 = newRow.insertCell(0);            
+            const cell2 = newRow.insertCell(1);    
+            const cell3 = newRow.insertCell(2); 
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);          
+            cell1.innerHTML = data.pedido;            
+            cell2.innerHTML = data.descricao;
+            cell3.innerHTML = data.localizacao;            
+            cell4.innerHTML = data.pessoas;
+            cell5.innerHTML = `<button onclick='editpedido("${doc.id}")'>Editar</button>`;          
+            console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+    });
         console.log(pedidos);
+    
 
     </script>
 </body>

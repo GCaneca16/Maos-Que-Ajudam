@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar Pedidos</title>
+    <title>Editar Pedido</title>
     <link rel="stylesheet" href="homes_style.css">
 </head>
 
@@ -12,13 +12,12 @@
     <div class="container">
         <div class="content">
 
-            <h1>Criar Pedido</h1>
+            <h1>Editar</h1>
         </div>
         <div class="butoess">
             <section>
                 <option id="createMeusButton">Pedidos</option>
             </section>
-            
             <script>
                 document.getElementById("createMeusButton").onclick = function () {
                     window.location.href = "home_membro.html";
@@ -31,7 +30,7 @@
                 <input id="descricao" type="descricao" placeholder="Descrição" required>
                 <input id="localizacao" type="localizacao" placeholder="Localização">
                 <input id="n_pessoas" type="n_pessoas" placeholder="Nº de Pessoas">
-                <button id="createPedido" type="button">Enviar Pedido</button>
+                <button id="createPedido" type="button">Atualizar Pedido</button>
             </div>
 
             <img src="img/image 1.png" alt="Logo">
@@ -51,10 +50,10 @@
             const descricao = document.getElementById("descricao").value;
             const localizacao = document.getElementById("localizacao").value;
             const pessoas = document.getElementById("n_pessoas").value;
-
+            var docId = sessionStorage.getItem("docId");
             const newPedido = await StorePedido({
                 userId, pedido, descricao, localizacao, pessoas
-            });
+            },docId);
             window.location.href = "home_membro.html";
         };
     </script>
